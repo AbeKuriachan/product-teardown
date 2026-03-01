@@ -1,0 +1,7 @@
+# Reflections
+
+**"Which of the 6 layers surprised you the most in terms of complexity for the product you chose? Why?"**
+Layer 2 (Statistics & Analysis) surprised me the most in terms of complexity for the YouTube recommendation feed [1, 2]. It is easy to assume that the Machine Learning models in Layer 3 do all the heavy lifting for the product [3, 4]. However, Claude's breakdown of "survivorship bias"—the fact that users can only engage with videos the algorithm already chose to show them—revealed that the raw data is inherently biased [1, 2]. Correcting this offline using counterfactual evaluation and inverse propensity scoring before the ML model even touches the data is a staggeringly complex prerequisite [1, 2].
+
+**"What was the single biggest difference you noticed between the LLMs you tested? Not just 'one was better' — what specifically did one do that the others couldn't?"**
+The single biggest difference was the models' discipline regarding architectural boundaries and the separation of concerns [1-112]. While Gemini possessed strong technical vocabulary, it frequently hallucinated the boundaries of the layers, such as placing ML ranking networks into Layer 5 (Deployment) and placing frontend business logic like "Filter Bubbles" into Layer 6 (System Scale) [109-111]. Claude was the only model that strictly maintained the framework's definitions, correctly isolating infrastructure concepts to Layer 5 and accurately identifying that Layer 4 (Generative AI) is merely supplementary to the core deep learning ranker [13, 15, 51, 53]
